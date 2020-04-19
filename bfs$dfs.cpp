@@ -53,12 +53,12 @@ void dfsTraverseRecur(bool visited[],vector<pair<int,int> >adj[],int v)
 	}
 	
 }
-void dfs(vector<pair<int,int> >adj[],int v)
+void dfs(vector<pair<int,int> >adj[],int src,int v)
 {
 	bool visited[v];
 	for(int i=0;i<v;i++)
 		visited[i]=false;
-	dfsTraverseRecur(visited,adj,v);
+	dfsTraverseRecur(visited,adj,src);
 }
 
 int main()
@@ -76,7 +76,7 @@ int main()
     cout<<"\nBFS Traversal Of the Graph\n"; 
     bfsTraverse(adj,0);
     cout<<"\nDFS Traversal of the Graph\n";
-    dfs(adj,2);
+    dfs(adj,2,vertices);
     return 0;
     
 } 
